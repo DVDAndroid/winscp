@@ -17,7 +17,7 @@
 #include <Soap.EncdDecd.hpp>
 #include <StrUtils.hpp>
 #include <XMLDoc.hpp>
-#include <StrUtils.hpp>
+#include <System.IOUtils.hpp>
 #include <algorithm>
 //---------------------------------------------------------------------------
 #pragma package(smart_init)
@@ -77,7 +77,9 @@ const UnicodeString UrlRawSettingsParamNamePrefix(L"x-");
 const UnicodeString PassphraseOption(L"passphrase");
 const UnicodeString RawSettingsOption(L"rawsettings");
 const UnicodeString S3HostName(S3LibDefaultHostName());
+const UnicodeString HomePathPrefix(L"~");
 const UnicodeString OpensshHostDirective(L"Host");
+const UnicodeString OpensshIncludeDirective(L"Include");
 //---------------------------------------------------------------------
 TDateTime __fastcall SecToDateTime(int Sec)
 {
@@ -1656,7 +1658,6 @@ void TSessionData::ImportFromOpenssh(TStrings * Lines)
           // It's likely there would be forward slashes in OpenSSH config file and our load/save dialogs
           // (e.g. when converting keys) work suboptimally when working with forward slashes.
           UnicodeString Path = GetNormalizedPath(Value);
-          const UnicodeString HomePathPrefix = L"~";
           if (StartsStr(HomePathPrefix, Path + L"\\"))
           {
             Path =
@@ -5047,21 +5048,69 @@ void TStoredSessionList::ImportFromOpenssh(TStrings * Lines)
   {
     UnicodeString Line = Lines->Strings[Index];
     UnicodeString Directive, Value;
-    if (ParseOpensshDirective(Line, Directive, Value) &&
-        SameText(Directive, OpensshHostDirective))
+    if (ParseOpensshDirective(Line, Directive, Value))
     {
-      while (!Value.IsEmpty())
+      if (SameText(Directive, OpensshHostDirective))
       {
-        UnicodeString Name = CutOpensshToken(Value);
-        if ((Hosts->IndexOf(Name) < 0) && (Name.LastDelimiter(L"*?") == 0))
+        while (!Value.IsEmpty())
         {
-          std::unique_ptr<TSessionData> Data(new TSessionData(EmptyStr));
-          Data->CopyData(DefaultSettings);
-          Data->Name = Name;
-          Data->HostName = Name;
-          Data->ImportFromOpenssh(Lines);
-          Add(Data.release());
-          Hosts->Add(Name);
+          UnicodeString Name = CutOpensshToken(Value);
+          if ((Hosts->IndexOf(Name) < 0) && (Name.LastDelimiter(L"*?") == 0))
+          {
+            std::unique_ptr<TSessionData> Data(new TSessionData(EmptyStr));
+            Data->CopyData(DefaultSettings);
+            Data->Name = Name;
+            Data->HostName = Name;
+            Data->ImportFromOpenssh(Lines);
+            Add(Data.release());
+            Hosts->Add(Name);
+          }
+        }
+      }
+      else if (SameText(Directive, OpensshIncludeDirective))
+      {
+        // Support "Include" directive in the config file
+        // It allows to include other config files, referenced by absolute or relative path
+        // https://man7.org/linux/man-pages/man5/ssh_config.5.html section "Include"
+
+        if (Value.Pos(L" ") > 0 && !StartsStr(L"\"", Value) && !EndsStr(L"\"", Value))
+        {
+          // if the included config file name contains spaces, it must be enclosed in quotes
+          // since it is not supported by ssh, skip it
+
+          // handle 'Include C:\my path\my_config'
+          continue;
+        } else if (StartsStr(L"\"", Value) && EndsStr(L"\"", Value))
+        {
+          // if it is enclosed in quotes, remove them, to make work with `FileExists`
+
+          // handle 'Include "C:\my path\my_config"'
+          Value = Value.SubString(2, Value.Length() - 2);
+        }
+
+        UnicodeString ConfigToInclude = GetNormalizedPath(Value);
+        
+        // if starts with '~', replace it with the home directory
+        // handle 'Include ~/my_config'
+        if (StartsStr(HomePathPrefix, ConfigToInclude + L"\\"))
+        {
+          ConfigToInclude =
+                GetShellFolderPath(CSIDL_PROFILE) +
+            ConfigToInclude.SubString(HomePathPrefix.Length() + 1, ConfigToInclude.Length() - HomePathPrefix.Length());
+        }
+
+        // files without absolute paths are assumed to be in the .ssh directory
+        // handle 'Include my_config'
+        if (!FileExists(ApiPath(ConfigToInclude)))
+        {
+          ConfigToInclude = TPath::Combine(Configuration->GetOpensshFolder(), Value);
+        }
+
+        if (FileExists(ApiPath(ConfigToInclude)))
+        {
+          std::unique_ptr<TStrings> LinesToInclude(new TStringList());
+          LoadScriptFromFile(ConfigToInclude, LinesToInclude.get(), true);
+          Lines->AddStrings(LinesToInclude.get());
         }
       }
     }

@@ -282,6 +282,7 @@ public:
     TStrings * Lines, TStoredSessionList * Sessions, UnicodeString & Error);
   TStoredSessionList * SelectOpensshSessionsForImport(TStoredSessionList * Sessions, UnicodeString & Error);
   UnicodeString GetPuttySessionsKey(const UnicodeString & RootKey);
+  UnicodeString GetOpensshFolder();
 
   __property TVSFixedFileInfo *FixedApplicationInfo  = { read=GetFixedApplicationInfo };
   __property void * ApplicationInfo  = { read=GetApplicationInfo };
