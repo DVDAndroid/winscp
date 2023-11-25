@@ -44,10 +44,10 @@
 		<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 		<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;$(DCC_Namespace)</DCC_Namespace>
 		<Defines>WINSCP;_WIN32;$(Defines)</Defines>
-		<FinalOutputDir>$(INTERM_PATH)\$(Platform)\$(Config)</FinalOutputDir>
-		<ILINK_LibraryPath>$(BDS)\lib;$(BDS)\lib\obj;$(BDS)\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-		<IncludePath>filezilla\misc\;filezilla\;resource;core;..\libs\openssl\include;..\libs\mfc\include;$(BDS)\include;$(BDS)\include\windows\vcl;$(IncludePath)</IncludePath>
-		<IntermediateOutputDir>$(INTERM_PATH)\$(Platform)\$(Config)</IntermediateOutputDir>
+		<FinalOutputDir>J:\workspaces\C++\winscp\source\$(Platform)\$(Config)</FinalOutputDir>
+		<ILINK_LibraryPath>C:\Program Files (x86)\Embarcadero\Studio\14.0\lib;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\obj;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\psdk;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+		<IncludePath>filezilla\misc\;filezilla\;resource;core;..\libs\openssl\include;..\libs\mfc\include;C:\Program Files (x86)\Embarcadero\Studio\14.0\include;C:\Program Files (x86)\Embarcadero\Studio\14.0\include\windows\vcl;$(IncludePath)</IncludePath>
+		<IntermediateOutputDir>J:\workspaces\C++\winscp\source\$(Platform)\$(Config)</IntermediateOutputDir>
 		<Manifest_File>None</Manifest_File>
 		<Multithreaded>true</Multithreaded>
 		<OutputExt>lib</OutputExt>
@@ -146,7 +146,7 @@
 			<CfgParent>Base</CfgParent>
 		</BuildConfiguration>
 	</ItemGroup>
-	<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+	<Import Condition="Exists('C:\Program Files (x86)\Embarcadero\Studio\14.0\Bin\CodeGear.Cpp.Targets')" Project="C:\Program Files (x86)\Embarcadero\Studio\14.0\Bin\CodeGear.Cpp.Targets"/>
 	<ProjectExtensions>
 		<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
 		<Borland.ProjectType>CppStaticLibrary</Borland.ProjectType>

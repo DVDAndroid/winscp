@@ -120,8 +120,8 @@ object ImportSessionsDialog: TImportSessionsDialog
     object ErrorLabel: TLabel
       Left = 0
       Top = 0
-      Width = 281
-      Height = 97
+      Width = 49
+      Height = 13
       Align = alClient
       Alignment = taCenter
       Caption = 'ErrorLabel'

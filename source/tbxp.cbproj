@@ -32,7 +32,7 @@
 		<_TCHARMapping>wchar_t</_TCHARMapping>
 		<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
 		<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
-		<BPILibOutputDir>$(INTERM_PATH)\$(Platform)\$(Config)</BPILibOutputDir>
+		<BPILibOutputDir>J:\workspaces\C++\winscp\source\$(Platform)\$(Config)</BPILibOutputDir>
 		<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 		<DCC_CVT_ACHAR_TO_WCHAR>true</DCC_CVT_ACHAR_TO_WCHAR>
 		<DCC_CVT_WIDENING_STRING_LOST>true</DCC_CVT_WIDENING_STRING_LOST>
@@ -40,13 +40,13 @@
 		<DCC_EXPLICIT_STRING_CAST_LOSS>true</DCC_EXPLICIT_STRING_CAST_LOSS>
 		<DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Vcl;$(DCC_Namespace)</DCC_Namespace>
 		<DCC_UnitSearchPath>packages\tbx;packages\tb2k;packages\my;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
-		<FinalOutputDir>$(INTERM_PATH)\$(Platform)\$(Config)</FinalOutputDir>
+		<FinalOutputDir>J:\workspaces\C++\winscp\source\$(Platform)\$(Config)</FinalOutputDir>
 		<ILINK_Description>Toolbar2000 -- TBX Extensions (Alex Denisov)</ILINK_Description>
 		<ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
 		<ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
-		<ILINK_LibraryPath>packages\tbx\;packages\tb2k;packages\my;$(BDS)\lib\obj;$(ILINK_LibraryPath)</ILINK_LibraryPath>
-		<IncludePath>packages\tbx\;packages\tb2k;packages\my;$(BDS)\include;$(BDS)\include\windows\vcl;$(IncludePath)</IncludePath>
-		<IntermediateOutputDir>$(INTERM_PATH)\$(Platform)\$(Config)</IntermediateOutputDir>
+		<ILINK_LibraryPath>packages\tbx\;packages\tb2k;packages\my;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\obj;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+		<IncludePath>packages\tbx\;packages\tb2k;packages\my;C:\Program Files (x86)\Embarcadero\Studio\14.0\include;C:\Program Files (x86)\Embarcadero\Studio\14.0\include\windows\vcl;$(IncludePath)</IncludePath>
+		<IntermediateOutputDir>J:\workspaces\C++\winscp\source\$(Platform)\$(Config)</IntermediateOutputDir>
 		<Multithreaded>true</Multithreaded>
 		<OutputExt>bpl</OutputExt>
 		<ProjectType>CppPackage</ProjectType>
@@ -140,7 +140,7 @@
 			<CfgParent>Base</CfgParent>
 		</BuildConfiguration>
 	</ItemGroup>
-	<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+	<Import Condition="Exists('C:\Program Files (x86)\Embarcadero\Studio\14.0\Bin\CodeGear.Cpp.Targets')" Project="C:\Program Files (x86)\Embarcadero\Studio\14.0\Bin\CodeGear.Cpp.Targets"/>
 	<ProjectExtensions>
 		<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
 		<Borland.ProjectType>CppPackage</Borland.ProjectType>

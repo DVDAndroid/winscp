@@ -19,6 +19,7 @@ cd ..
 
 if not exist %LIB_PATH%\libeay32.lib (
 echo OpenSSL build failed
+pause
 exit
 )
 
@@ -38,6 +39,7 @@ cd ..\..
 
 if not exist expat\bcb5\release\libexpats_mtd.lib (
 echo Expat build failed
+pause
 exit
 )
 
@@ -58,7 +60,9 @@ make -f Makefile.bcb all
 cd ..
 
 if not exist %LIB_PATH%\neon.lib (
+echo %LIB_PATH%\neon.lib
 echo neon build failed
+pause
 exit
 )
 
@@ -78,6 +82,7 @@ cd ..
 
 if not exist %LIB_PATH%\PuTTYVS.lib (
 echo PuTTYVS build failed
+pause
 exit
 )
 
@@ -97,6 +102,7 @@ cd ..
 
 if not exist %LIB_PATH%\libs3.lib (
 echo libs3 build failed
+pause
 exit
 )
 
@@ -116,6 +122,7 @@ cd ..\..
 
 if not exist %LIB_PATH%\UafxcW.lib (
 echo MFC build failed
+pause
 exit
 )
 

@@ -2,10 +2,10 @@
 #include <vcl.h>
 #pragma hdrstop
 
-USEFORM("forms\CustomScpExplorer.cpp", CustomScpExplorerForm);
 USEFORM("forms\NonVisual.cpp", NonVisualDataModule); /* TDataModule: File Type */
-USEFORM("forms\ScpCommander.cpp", ScpCommanderForm);
+USEFORM("forms\CustomScpExplorer.cpp", CustomScpExplorerForm);
 USEFORM("forms\ScpExplorer.cpp", ScpExplorerForm);
+USEFORM("forms\ScpCommander.cpp", ScpCommanderForm);
 //---------------------------------------------------------------------------
 #include <CoreMain.h>
 #include <WinInterface.h>
@@ -20,20 +20,20 @@ WINAPI wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)
   int Result = 0;
   try
   {
-    TProgramParams * Params = TProgramParams::Instance();
+	TProgramParams * Params = TProgramParams::Instance();
     ApplicationLog = new TApplicationLog();
     UnicodeString AppLogPath;
     if (Params->FindSwitch(L"applog", AppLogPath))
     {
       ApplicationLog->Enable(AppLogPath);
     }
-    AppLog(L"Starting...");
+	AppLog(L"Starting...");
 
     AddStartupSequence(L"M");
     DllHijackingProtection();
     AddStartupSequence(L"T");
 
-    WinInitialize();
+	WinInitialize();
     Application->Initialize();
     Application->MainFormOnTaskBar = true;
     Application->ModalPopupMode = pmAuto;
@@ -61,15 +61,15 @@ WINAPI wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)
       {
         // Capture most errors before Usage class is released,
         // so that we can count them
-        Configuration->Usage->Inc(L"GlobalFailures");
+		Configuration->Usage->Inc(L"GlobalFailures");
         // After we get WM_QUIT (posted by Application->Terminate()), i.e once Application->Run() exits,
         // the message just blinks
-        ShowExtendedException(&E);
+		ShowExtendedException(&E);
       }
     }
     __finally
     {
-      AppLog(L"Finalizing");
+	  AppLog(L"Finalizing");
       GUIFinalize();
       FinalizeSystemSettings();
       FinalizeWinHelp();
@@ -81,7 +81,7 @@ WINAPI wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)
   }
   catch (Exception &E)
   {
-    ShowExtendedException(&E);
+	ShowExtendedException(&E);
   }
   return Result;
 }

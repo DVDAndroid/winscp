@@ -107,7 +107,7 @@ CG=0
 
 # Lib directory
 !ifndef LIBDIR
-LIBDIR=$(LIB_PATH)
+LIBDIR=outdir
 !endif
 
 # Lib Path

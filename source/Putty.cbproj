@@ -58,9 +58,9 @@
 		<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 		<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;$(DCC_Namespace)</DCC_Namespace>
 		<Defines>SECURITY_WIN32;WINSCP;MPEXT;PLATFORM_HAS_SMEMCLR;_WINDOWS;$(Defines)</Defines>
-		<FinalOutputDir>$(INTERM_PATH)\$(Platform)\$(Config)</FinalOutputDir>
-		<IncludePath>putty\windows\utils\;putty\utils\;putty\stubs\;putty\ssh\;putty\proxy\;putty\crypto\;putty\;putty\windows\;$(BDS)\include;$(IncludePath)</IncludePath>
-		<IntermediateOutputDir>$(INTERM_PATH)\$(Platform)\$(Config)</IntermediateOutputDir>
+		<FinalOutputDir>J:\workspaces\C++\winscp\source\$(Platform)\$(Config)</FinalOutputDir>
+		<IncludePath>putty\windows\utils\;putty\utils\;putty\stubs\;putty\ssh\;putty\proxy\;putty\crypto\;putty\;putty\windows\;C:\Program Files (x86)\Embarcadero\Studio\14.0\include;$(IncludePath)</IncludePath>
+		<IntermediateOutputDir>J:\workspaces\C++\winscp\source\$(Platform)\$(Config)</IntermediateOutputDir>
 		<Manifest_File>None</Manifest_File>
 		<Multithreaded>true</Multithreaded>
 		<OutputExt>lib</OutputExt>
@@ -598,7 +598,7 @@
 			<CfgParent>Base</CfgParent>
 		</BuildConfiguration>
 	</ItemGroup>
-	<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+	<Import Condition="Exists('C:\Program Files (x86)\Embarcadero\Studio\14.0\Bin\CodeGear.Cpp.Targets')" Project="C:\Program Files (x86)\Embarcadero\Studio\14.0\Bin\CodeGear.Cpp.Targets"/>
 	<ProjectExtensions>
 		<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
 		<Borland.ProjectType>CppStaticLibrary</Borland.ProjectType>
