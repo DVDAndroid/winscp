@@ -3,7 +3,7 @@ CFLAG=-DWIN32 -DWIN32_LEAN_AND_MEAN -DWINSCP -DNE_LFS -q-c -tWC -tWM -P
 CFLAG = $(CFLAG) -w-aus -w-par
 
 # The output directory for everything interesting
-OUT_D=$(LIB_PATH)
+OUT_D=outdir
 # The output directory for all the temporary muck
 TMP_D=tmp
 

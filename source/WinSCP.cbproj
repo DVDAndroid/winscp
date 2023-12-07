@@ -61,13 +61,13 @@
 		<DCC_SYMBOL_PLATFORM>false</DCC_SYMBOL_PLATFORM>
 		<DCC_UNSUPPORTED_CONSTRUCT>false</DCC_UNSUPPORTED_CONSTRUCT>
 		<Defines>WINSCP;STRICT;$(Defines)</Defines>
-		<FinalOutputDir>$(FINAL_PATH)\$(Platform)\$(Config)</FinalOutputDir>
+		<FinalOutputDir>J:\workspaces\C++\winscp\source\$(Platform)\$(Config)</FinalOutputDir>
 		<Icon_MainIcon>resource\Application.ico</Icon_MainIcon>
 		<ILINK_GenerateDRC>true</ILINK_GenerateDRC>
 		<ILINK_LibraryPath>windows\;forms\;packages\filemng;packages\tbx;packages\png;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 		<ILINK_MapFileType>DetailedSegments</ILINK_MapFileType>
-		<IncludePath>console;windows\;forms\;core;resource;components;dragext;packages\filemng;packages\dragndrop;packages\my;packages\tb2k;packages\tbx;packages\png;packages\jcl;..\libs\mfc\include;$(BDS)\include\windows;$(BDS)\include\windows\sdk;$(BDS)\include\windows\vcl;$(IncludePath)</IncludePath>
-		<IntermediateOutputDir>$(INTERM_PATH)\$(Platform)\$(Config)</IntermediateOutputDir>
+		<IncludePath>console;windows\;forms\;core;resource;components;dragext;packages\filemng;packages\dragndrop;packages\my;packages\tb2k;packages\tbx;packages\png;packages\jcl;..\libs\mfc\include;C:\Program Files (x86)\Embarcadero\Studio\14.0\include\windows;C:\Program Files (x86)\Embarcadero\Studio\14.0\include\windows\sdk;C:\Program Files (x86)\Embarcadero\Studio\14.0\include\windows\vcl;$(IncludePath)</IncludePath>
+		<IntermediateOutputDir>J:\workspaces\C++\winscp\source\$(Platform)\$(Config)</IntermediateOutputDir>
 		<Manifest_File>windows\WinSCP.exe.manifest</Manifest_File>
 		<Multithreaded>true</Multithreaded>
 		<OutputExt>exe</OutputExt>
@@ -105,20 +105,20 @@
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
 		<ILINK_DisableIncrementalLinking>true</ILINK_DisableIncrementalLinking>
-		<ILINK_LibraryPath>$(INTERM_PATH)\Win32\Debug\;$(INTERM_PATH)\Win32\;$(BDS)\lib\Win32\Debug\;$(BDS)\lib\Win32\Release\;$(BDS)\lib\Win32\Release\psdk\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+		<ILINK_LibraryPath>J:\workspaces\C++\winscp\source\Win32\Debug\;J:\workspaces\C++\winscp\source\Win32\;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\Win32\Debug\;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\Win32\Release\;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\Win32\Release\psdk\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Cfg_1_Win64)'!=''">
-		<ILINK_LibraryPath>$(INTERM_PATH)\Win64\Debug\;$(INTERM_PATH)\Win64\;$(BDS)\lib\Win64\Debug\;$(BDS)\lib\Win64\Release\;$(BDS)\lib\Win64\Release\psdk\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+		<ILINK_LibraryPath>J:\workspaces\C++\winscp\source\Win64\Debug\;J:\workspaces\C++\winscp\source\Win64\;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\Win64\Debug\;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\Win64\Release\;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\Win64\Release\psdk\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Cfg_2)'!=''">
 		<Defines>NDEBUG;$(Defines)</Defines>
 		<TASM_Debugging>None</TASM_Debugging>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
-		<ILINK_LibraryPath>$(INTERM_PATH)\Win32\Release\;$(INTERM_PATH)\Win32\;$(BDS)\lib\Win32\Release\;$(BDS)\lib\Win32\Release\psdk\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+		<ILINK_LibraryPath>J:\workspaces\C++\winscp\source\Win32\Release\;J:\workspaces\C++\winscp\source\Win32\;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\Win32\Release\;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\Win32\Release\psdk\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 	</PropertyGroup>
 	<PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
-		<ILINK_LibraryPath>$(INTERM_PATH)\Win64\Release\;$(INTERM_PATH)\Win64\;$(BDS)\lib\Win64\Release\;$(BDS)\lib\Win64\Release\psdk\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
+		<ILINK_LibraryPath>J:\workspaces\C++\winscp\source\Win64\Release\;J:\workspaces\C++\winscp\source\Win64\;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\Win64\Release\;C:\Program Files (x86)\Embarcadero\Studio\14.0\lib\Win64\Release\psdk\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 	</PropertyGroup>
 	<ItemGroup>
 		<CppCompile Include="forms\CustomScpExplorer.cpp">
@@ -282,7 +282,7 @@
 			<CfgParent>Base</CfgParent>
 		</BuildConfiguration>
 	</ItemGroup>
-	<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+	<Import Condition="Exists('C:\Program Files (x86)\Embarcadero\Studio\14.0\Bin\CodeGear.Cpp.Targets')" Project="C:\Program Files (x86)\Embarcadero\Studio\14.0\Bin\CodeGear.Cpp.Targets"/>
 	<ProjectExtensions>
 		<Borland.Personality>CPlusPlusBuilder.Personality.12</Borland.Personality>
 		<Borland.ProjectType>CppVCLApplication</Borland.ProjectType>

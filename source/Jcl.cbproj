@@ -44,18 +44,18 @@
 		<BCC_ExtendedErrorInfo>true</BCC_ExtendedErrorInfo>
 		<BCC_OptimizeForSpeed>true</BCC_OptimizeForSpeed>
 		<BCC_wpar>false</BCC_wpar>
-		<BPILibOutputDir>$(INTERM_PATH)\$(Platform)\$(Config)</BPILibOutputDir>
+		<BPILibOutputDir>J:\workspaces\C++\winscp\source\$(Platform)\$(Config)</BPILibOutputDir>
 		<DCC_CBuilderOutput>JPHNE</DCC_CBuilderOutput>
 		<DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;$(DCC_Namespace)</DCC_Namespace>
 		<DCC_UnitSearchPath>packages\jcl;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
 		<Defines>WINSCP;$(Defines)</Defines>
 		<DynamicRTL>true</DynamicRTL>
-		<FinalOutputDir>$(INTERM_PATH)\$(Platform)\$(Config)</FinalOutputDir>
+		<FinalOutputDir>J:\workspaces\C++\winscp\source\$(Platform)\$(Config)</FinalOutputDir>
 		<ILINK_GenerateImportLibrary>true</ILINK_GenerateImportLibrary>
 		<ILINK_GenerateLibFile>true</ILINK_GenerateLibFile>
 		<ILINK_LibraryPath>packages\jcl\;$(ILINK_LibraryPath)</ILINK_LibraryPath>
 		<IncludePath>packages\jcl\;$(IncludePath)</IncludePath>
-		<IntermediateOutputDir>$(INTERM_PATH)\$(Platform)\$(Config)</IntermediateOutputDir>
+		<IntermediateOutputDir>J:\workspaces\C++\winscp\source\$(Platform)\$(Config)</IntermediateOutputDir>
 		<Multithreaded>true</Multithreaded>
 		<ProjectType>CppPackage</ProjectType>
 		<RuntimeOnlyPackage>true</RuntimeOnlyPackage>
@@ -171,6 +171,6 @@
 		</BorlandProject>
 		<ProjectFileVersion>12</ProjectFileVersion>
 	</ProjectExtensions>
-	<Import Condition="Exists('$(BDS)\Bin\CodeGear.Cpp.Targets')" Project="$(BDS)\Bin\CodeGear.Cpp.Targets"/>
+	<Import Condition="Exists('C:\Program Files (x86)\Embarcadero\Studio\14.0\Bin\CodeGear.Cpp.Targets')" Project="C:\Program Files (x86)\Embarcadero\Studio\14.0\Bin\CodeGear.Cpp.Targets"/>
 	<Import Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')" Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj"/>
 </Project>
